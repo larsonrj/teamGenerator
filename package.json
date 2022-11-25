@@ -1,0 +1,23 @@
+{
+  "name": "teamgenerator",
+  "version": "1.0.0",
+  "description": "NPM init for teamGenerator",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larsonrj/teamGenerator.git"
+  },
+  "author": "larsonrj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/larsonrj/teamGenerator/issues"
+  },
+  "homepage": "https://github.com/larsonrj/teamGenerator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^29.3.1"
+  }
+}
