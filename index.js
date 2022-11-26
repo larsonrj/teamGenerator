@@ -169,7 +169,6 @@ function createIntern() {
 }
 
 function createHTML() {
-  git;
   htmlText = `Test`;
   fs.writeFile("./render/index.html", htmlText, (err) =>
     err ? console.error(err) : console.log("Success!")
