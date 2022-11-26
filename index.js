@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");
+const fs = require("fs");
 const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
@@ -76,12 +77,11 @@ function createManager() {
         officeNumber
       );
       team.push(manager);
-      console.log(team);
       if (response.new) {
         id += 1;
         teamInput();
       } else {
-        return;
+        createHTML();
       }
     });
 }
@@ -118,12 +118,11 @@ function createEngineer() {
         response.github
       );
       team.push(engineer);
-      console.log(team);
       if (response.new) {
         id += 1;
         teamInput();
       } else {
-        return;
+        createHTML();
       }
     });
 }
@@ -160,12 +159,19 @@ function createIntern() {
         response.school
       );
       team.push(intern);
-      console.log(team);
       if (response.new) {
         id += 1;
         teamInput();
       } else {
-        return;
+        createHTML();
       }
     });
+}
+
+function createHTML() {
+  git;
+  htmlText = `Test`;
+  fs.writeFile("./render/index.html", htmlText, (err) =>
+    err ? console.error(err) : console.log("Success!")
+  );
 }
