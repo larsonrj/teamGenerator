@@ -1,5 +1,6 @@
 const Engineer = require("../lib/Engineer");
 
+// Tests that an engineer will have a name, id email and github username added and that getRole() returns "Engineer"
 describe("Engineer", () => {
   describe("Create Engineer", () => {
     it("Should create an object with a name, id, email and github username", () => {

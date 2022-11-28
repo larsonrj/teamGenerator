@@ -1,5 +1,6 @@
 const Intern = require("../lib/Intern");
 
+// Tests that an engineer will have a name, id email and school added and that getRole() returns "Intern"
 describe("Intern", () => {
   describe("Create Intern", () => {
     it("Should create an object with a name, id, email and school", () => {

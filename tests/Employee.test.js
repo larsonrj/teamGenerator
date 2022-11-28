@@ -1,5 +1,6 @@
 const Employee = require("../lib/Employee");
 
+// Tests that an employee will have a name, id and email added and that getRole() returns "Employee"
 describe("Employee", () => {
   describe("Create Employee", () => {
     it("Should create an object with a name, id and email", () => {

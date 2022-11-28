@@ -1,5 +1,6 @@
 const Manager = require("../lib/Manager");
 
+// Tests that an engineer will have a name, id email and office number added and that getRole() returns "Manager"
 describe("Manager", () => {
   describe("Create Manager", () => {
     it("Should create an object with a name, id, email and office number", () => {

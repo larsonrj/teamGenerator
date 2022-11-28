@@ -1,3 +1,4 @@
+// Set up all required modules for the script
 const inquirer = require("inquirer");
 const fs = require("fs");
 const Employee = require("./lib/Employee");
@@ -7,6 +8,7 @@ const Intern = require("./lib/Intern");
 const team = [];
 var id = 1;
 
+// Create function to ask the user to create a team
 function startTeam() {
   inquirer
     .prompt([
@@ -25,8 +27,10 @@ function startTeam() {
     });
 }
 
+// Initialize the script when node index.js is input
 startTeam();
 
+// If the user decides to add another team member they will be asked for either an engineer or intern
 function teamInput() {
   inquirer
     .prompt([
@@ -48,6 +52,7 @@ function teamInput() {
     });
 }
 
+// The manager is the first member of the team created
 function createManager() {
   officeNumber = Math.floor(Math.random() * 99) + 1;
   inquirer
@@ -86,6 +91,7 @@ function createManager() {
     });
 }
 
+// This function prompts the user for information on the engineer
 function createEngineer() {
   inquirer
     .prompt([
@@ -127,6 +133,7 @@ function createEngineer() {
     });
 }
 
+// This function prompts the user for information on the intern
 function createIntern() {
   inquirer
     .prompt([
@@ -168,6 +175,7 @@ function createIntern() {
     });
 }
 
+// This function creates the html from the user input
 function createHTML() {
   const card = [];
   team.forEach((item) => {
