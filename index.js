@@ -169,7 +169,95 @@ function createIntern() {
 }
 
 function createHTML() {
-  htmlText = `Test`;
+  const card = [];
+  team.forEach((item) => {
+    if (item.getRole() === "Manager") {
+      text = `<div class="col-4">
+          <div class="card">
+            <div class="card-header bg-primary text-white">
+              <h5 class="card-title mb-2">${item.name}</h5>
+              <p class="card-subtitle mt-2 mb-2">${item.getRole()}</p>
+            </div>
+            <ul class="m-2 list-group"><li class="list-group-item">ID:  ${
+              item.id
+            }</li>
+            <li class="list-group-item">Email:  <a href="mailto:${
+              item.email
+            }">${item.email}</a></li>
+          <li class="list-group-item">Office Number:  ${
+            item.officeNumber
+          }</li></ul>
+          </div>
+        </div>`;
+      card.push(text);
+    }
+    if (item.getRole() === "Engineer") {
+      text = `<div class="col-4">
+          <div class="card">
+            <div class="card-header bg-primary text-white">
+              <h5 class="card-title mb-2">${item.name}</h5>
+              <p class="card-subtitle mt-2 mb-2">${item.getRole()}</p>
+            </div>
+            <ul class="m-2 list-group"><li class="list-group-item">ID:  ${
+              item.id
+            }</li>
+            <li class="list-group-item">Email:  <a href="mailto:${
+              item.email
+            }">${item.email}</a></li>
+          <li class="list-group-item">Github: <a href="https://github.com/${
+            item.github
+          }">${item.github}</a></li></ul>
+          </div>
+        </div>`;
+      card.push(text);
+    }
+    if (item.getRole() === "Intern") {
+      text = `<div class="col-4">
+          <div class="card">
+            <div class="card-header bg-primary text-white">
+              <h5 class="card-title mb-2">${item.name}</h5>
+              <p class="card-subtitle mt-2 mb-2">${item.getRole()}</p>
+            </div>
+            <ul class="m-2 list-group"><li class="list-group-item">ID:  ${
+              item.id
+            }</li>
+            <li class="list-group-item">Email:  <a href="mailto:${
+              item.email
+            }">${item.email}</a></li>
+          <li class="list-group-item">School:  ${item.school}</li></ul>
+          </div>
+        </div>`;
+      card.push(text);
+    }
+  });
+  cardText = card.join("");
+  console.log(card);
+  htmlText = `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Roster</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="bg-success text-white text-center p-3 fs-2">
+      Team Roster
+    </header>
+    <div class="container mt-4">
+    <div class="row justify-content-center">
+${cardText}
+      </div>
+    </div>
+</div>
+  </body>
+</html>`;
   fs.writeFile("./render/index.html", htmlText, (err) =>
     err ? console.error(err) : console.log("Success!")
   );
